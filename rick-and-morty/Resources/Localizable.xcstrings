@@ -1,0 +1,30 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Characters" : {
+
+    },
+    "Episodes" : {
+
+    },
+    "Failed to fetch data" : {
+
+    },
+    "Items" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Locations" : {
+
+    },
+    "No data available." : {
+
+    },
+    "RICK and MORTY" : {
+
+    }
+  },
+  "version" : "1.0"
+}
