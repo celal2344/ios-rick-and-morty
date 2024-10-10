@@ -15,7 +15,6 @@ struct CharacterListView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Characters")
                 if let characters = charList?.results {
                     List(characters) { character in
                         CharacterView(character: character)
@@ -29,7 +28,7 @@ struct CharacterListView: View {
                 }
             }
         }
-        .navigationTitle("Items")
+        .navigationTitle("Characters")
         .task{
             do{
                 charList = try await viewModel.getCharacters()
