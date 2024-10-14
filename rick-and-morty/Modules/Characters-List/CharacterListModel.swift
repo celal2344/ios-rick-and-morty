@@ -7,19 +7,19 @@ import Foundation
 
 // MARK: - CharacterListModel
 struct CharacterListModel: Codable {
-    var info: Info
-    var results: [Result]
+    var info: CharacterInfo
+    var results: [CharacterResult]
 }
 
 // MARK: - Info
-struct Info: Codable {
+struct CharacterInfo: Codable {
     var count, pages: Int
     var next: String
-    var prev: JSONNull?
+    var prev: String?
 }
 
 // MARK: - Result
-struct Result: Codable, Identifiable {
+struct CharacterResult: Codable, Identifiable {
     var id: Int
     var name, status, species, type: String
     var gender: String
@@ -43,9 +43,9 @@ class JSONNull: Codable, Hashable {
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
             return true
     }
-
-    public var hashValue: Int {
-            return 0
+    
+    func hash(into hasher: inout Hasher) {
+        return 
     }
 
     public init() {}

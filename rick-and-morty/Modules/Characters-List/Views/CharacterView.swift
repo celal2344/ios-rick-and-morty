@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterView: View {
-    let character:Result
+    let character:CharacterResult
     var body: some View {
         HStack{
             AsyncImage(url: URL(string: character.image)) { image in
@@ -31,7 +31,7 @@ struct CharacterView: View {
 }
 
 #Preview {
-    CharacterView(character: Result(id: 1, name: "Rick Sanchez", status: "Alive", species: "sa", type: "sa", gender: "sa", origin: Location(name: "sa", url: "sa"), location: Location(name: "sa", url: "sa"), image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", episode: ["sa"], url: "sa", created: "sa"))
+    CharacterView(character: CharacterResult(id: 1, name: "Rick Sanchez", status: "Alive", species: "sa", type: "sa", gender: "sa", origin: Location(name: "sa", url: "sa"), location: Location(name: "sa", url: "sa"), image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", episode: ["sa"], url: "sa", created: "sa"))
 }
 //{
 //      "id": 1,

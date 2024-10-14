@@ -10,12 +10,13 @@ class CharacterListViewModel {
     static var shared = CharacterListViewModel()
     
     
-    func getCharacters() async throws -> CharacterListModel {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {throw APIError.invalidURL}
+    func getCharacters(page:Int) async throws -> CharacterListModel {
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(page)") else {throw APIError.invalidURL}
         let (data, _) = try await URLSession.shared.data(from: url)
         do{
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
+            print(page)
             return try decoder.decode( CharacterListModel.self, from: data)
         } catch {
             throw APIError.invalidData
